@@ -5,7 +5,7 @@ Write each method below in `src/main/java/Solution.java`. Every method
 `Scanner`. The official tests call your methods directly and check what they
 return.
 
-**Do not use `if` statements in any of these methods.** Every problem can be
+**You can use `if` statements in any of these methods.** BUT every problem can be
 solved with arithmetic, casting, and Java's built-in methods.
 
 Run `mvn clean test` at any time to see which tests pass.
@@ -70,6 +70,7 @@ Return how much the total value of your shares changed.
 
 Return the change in value rounded to the nearest whole dollar. This must
 work for **both positive and negative** values.
+**Try Math.round()**
 
 | Call | Returns |
 |---|---|
