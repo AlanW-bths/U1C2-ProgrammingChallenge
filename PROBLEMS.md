@@ -7,6 +7,7 @@ return.
 
 **You can use `if` statements in any of these methods.** BUT every problem can be
 solved with arithmetic, casting, and Java's built-in methods.
+`if(){}else{}`
 
 Run `mvn clean test` at any time to see which tests pass.
 
