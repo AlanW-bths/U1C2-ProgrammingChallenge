@@ -42,48 +42,47 @@ public class Solution {
     */
 
     //i made a helper :)-----------------------
-   public double addone(double input) {
-        double next = input + 1;
-        if (next == 10)
+   public int addone(int input) {
+        int next = input + 1;
+        if (input == 9)
         {
-            next = 0.0;
+            next = 0;
         };
         return next;
     };
     //-----------------------------------------
     public double adjustDigits(double userDouble) {
         // remove 0.0 and return your answer
-        double hundreds = userDouble - (userDouble / 100);
+        //remove decimal
+        userDouble *= 100;
+        //hundreds
+        int hundreds = (int) Math.floor((userDouble / 10000));
+        userDouble = userDouble % 10000;
+        //tens
+        int tens = (int) Math.floor((userDouble / 1000));
+        userDouble = userDouble % 1000;
+        //ones
+        int ones = (int) Math.floor((userDouble / 100));
         userDouble = userDouble % 100;
-
-        double tens = userDouble / 10;
+        //tenths
+        int tenths = (int) Math.floor((userDouble / 10));
         userDouble = userDouble % 10;
-
-        double ones = userDouble / 1;
-        userDouble = userDouble % 1;
-
-        double tenths = userDouble / 0.1;
-        userDouble = userDouble % 0.1;
-
-        double hundredths = userDouble / 0.01;
-
-        System.out.println("b " + hundreds + " " + tens + " " + ones + " " + tenths + " " + hundredths);
-
+        //hundredths
+        int hundredths = (int) Math.floor((userDouble / 1));
+        //addone (used a helper func)
         hundreds = addone(hundreds);
         tens = addone(tens);
         ones = addone(ones);
         tenths = addone(tenths);
         hundredths = addone(hundredths);
-
-        System.out.println("a " + hundreds + " " + tens + " " + ones + " " + tenths + " " + hundredths);
-
+        //combine
         double answer = (hundreds*100) + (tens*10) + (ones) + (tenths*0.1) + (hundredths*0.01);
         return answer;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.adjustDigits(120.90));
+        System.out.println(s.isPassing(64));
         //231.01
     }
 
